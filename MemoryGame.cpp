@@ -18,7 +18,7 @@ MemoryGame::MemoryGame() //default constructor,
     //Note that 2 added after 2 * numPairs means number of 
     //two extra blocks without actual data.
 {
-    //srand(time(NULL)); //TODO: uncomment this line to see
+    srand(time(NULL)); //TODO: uncomment this line to see
         //different layouts of numbers in different runnings.
         //time(NULL) is the current running time.
         //use the current running time to grow random sequence
@@ -36,6 +36,15 @@ MemoryGame::MemoryGame() //default constructor,
     //generate three random ints in [0, 1000),
     //randomly set them in the layout of the spaces,
     //that is, set up values array.
+    int *data = new int[numPairs];
+    for (int i = 0; i != numPairs; i++)
+    {
+        data[i] = rand() % 1000; 
+    }
+
+    randomize(numSlots);
+    values = new string[numSlots];
+
 }
 
 //TODO: implement by students
@@ -54,9 +63,12 @@ MemoryGame::~MemoryGame()
 //In constructors, randomly assign the data in dataVector 
 //to array values
 int* randomize(int size)
-{
+{// ALEX NOTES so I think that its just a matter of mixing all of the diffrent indexes
+  
+
     //idea to randomize 0, 1, 2, 3, 4, 5,
     //generate a random int in [0, 6), say 3,
+
     //then move arr[3] to the end,
     //say, 0, 1, 2, 5, 4, 3
     //generate a random int in [0, 5), say 3 again,
@@ -67,7 +79,22 @@ int* randomize(int size)
     //get 0, 1, 4, 2, 5, 3
     //continue to randomize arr[0..2].
     //afterwards, continue to randomize arr[0..1].
+    int * arr;
+    arr = new int[size];
+    for(int i; i < size; i++)
+    {
+        arr[i] = i;
+    }
+    
+    int mix;
+    while (size > 0)
+    {
+        mix  = rand() %size;
+        swap(arr, mix, size-1);
+        size = size - 1;
+    }
 
+    return arr;
 }
 
 //TODO: implement by students
@@ -76,7 +103,11 @@ int* randomize(int size)
 //swap arr[i] and arr[j] in array of ints arr.
 void swap(int *arr, int i, int j)
 {
+    int a = arr[i];
 
+    arr[i] = arr[j];
+
+    arr[j] = a;
 }
 
 //Display -----+ for numSlots times.
@@ -99,6 +130,10 @@ void displaySeparateLine(int numSlots)
 //display the items in values array where bShown is true.
 void MemoryGame::display(bool* bShown)
 {
+    if (true)
+    {
+        cout << "It is true" << endl;
+    }
 
 }
 
@@ -113,3 +148,20 @@ void MemoryGame::play()
 {   
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// make an array to an ordered index 
+// you are genreating a randomd number from 0 to end 
+// so end is randomizded 
+// then do oppositv e

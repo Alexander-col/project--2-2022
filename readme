@@ -1,0 +1,18 @@
+Item
+3/10/22: Project 2: Memory Game
+Attached Files:
+
+    File MemoryGameClient.cpp (190 B)
+    File makefile (1.115 KB)
+    File MemoryGame_slides.pptx (24.052 MB)
+    File MemoryGame_partial.cpp (3.396 KB)
+    File MemoryGame.hpp (1.941 KB)
+    File MemoryGame_slides.pdf (2.979 MB) 
+
+(a) Download MemoryGame.hpp and MemoryGameClient.cpp from blackboard.
+ 
+(b) Download MemoryGame_partial.cpp and rename it as MemoryGame.cpp. Finish TODO parts. That is,
+(b1) Implement swap and randomize functions, which will be used by MemoryGame class but are not member functions of MemoryGame.
+(b2) Implement the following member functions and constructor / destructor in MemoryGame.cpp: default constructor, destructor, display, and play.
+(c) Upload MemoryGame.hpp and MemoryGame.cpp to gradescope for grading. MemoryGameClient.cpp does not need to be upload to gradescope, but it will be needed to run the code in local computer.
+Some students may use online gdb for C++, in that case, delete main.cpp or remove code from default main.cpp to avoid duplicated main functions, then upload MemoryGame.hpp, MemoryGame.cpp, and MemoryGameClient.cpp. Click run button, and the project works.
